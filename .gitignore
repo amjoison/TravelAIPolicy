@@ -1,0 +1,33 @@
+# Android/IntelliJ/Android Studio ignores
+# See https://github.com/github/gitignore/blob/main/Android.gitignore
+
+# Gradle
+.gradle/
+/build/
+
+# Local configuration
+/local.properties
+
+# IntelliJ
+*.iml
+.idea/
+.idea/*
+
+# Avoid committing workspace-specific files
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/usage.statistics.xml
+.idea/dictionaries/
+
+# Android Studio captures
+captures/
+
+# Kotlin/Java build outputs
+**/build/
+
+# Generated files
+app/**/*.iml
+
+# Misc
+.DS_Store
+*.log
