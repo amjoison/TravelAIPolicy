@@ -1,3 +1,11 @@
+---
+layout: default
+title: "Privacy Policy — Travel AI"
+description: "Privacy policy for the Travel AI Android application."
+permalink: /privacy-policy/
+date: 2026-11-06
+---
+
 # Privacy Policy – Travel AI
 
 **Last updated:** November 6, 2026  
