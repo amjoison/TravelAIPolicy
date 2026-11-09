@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Privacy Policy — Travel AI</title>
+  <style>
+    :root{--bg:#fff;--text:#111;--muted:#555;--accent:#0b63d6;--code-bg:#f6f8fa}
+    @media(prefers-color-scheme:dark){:root{--bg:#0b0c0d;--text:#e6eef8;--muted:#9aaacb;--accent:#58a6ff;--code-bg:#071019}}
+    body{background:var(--bg);color:var(--text);font-family:Inter, Roboto, -apple-system, "Segoe UI", Arial, sans-serif;margin:0;padding:32px;line-height:1.6}
+    .container{max-width:900px;margin:0 auto}
+    header h1{margin:0 0 6px;font-size:28px}
+    header p{margin:0;color:var(--muted)}
+    hr{border:none;border-top:1px solid rgba(0,0,0,0.08);margin:28px 0}
+    h2{margin-top:28px;color:var(--text)}
+    h3{margin-top:18px}
+    pre, code{font-family:SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;background:var(--code-bg);padding:2px 6px;border-radius:6px}
+    pre{padding:12px;overflow:auto}
+    table{width:100%;border-collapse:collapse;margin-top:12px}
+    table th, table td{padding:10px;border:1px solid rgba(0,0,0,0.06);text-align:left}
+    table th{background:rgba(0,0,0,0.03);color:var(--muted)}
+    ul{padding-left:1.2rem}
+    .muted{color:var(--muted)}
+    .notice{border-left:4px solid var(--accent);padding:12px 16px;background:rgba(11,99,214,0.04);border-radius:6px;margin:12px 0}
+    a{color:var(--accent)}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Privacy Policy – Travel AI</h1>
+      <p class="muted"><strong>Last updated:</strong> November 6, 2026 &nbsp;|&nbsp; <strong>Application Name:</strong> Travel AI &nbsp;|&nbsp; <strong>Package Name:</strong> <code>com.amj.travelai.app</code></p>
+      <p class="muted">Developer / Publisher: AMJ Travel AI Team</p>
+    </header>
+
+    <hr>
+
+    <section>
+      <h2 id="overview">1. Overview and Scope</h2>
+      <p>Travel AI ("we", "our", or "the App") is an intelligent travel itinerary planner and assistant designed for Android devices. This Privacy Policy explains how Travel AI collects, stores, uses, transmits, and protects your information when you use our mobile application.</p>
+
+      <div class="notice">
+        <strong>Important Note on AI Features &amp; Manual Setup:</strong>
+        <p class="muted">Travel AI is designed as a client-side utility application. <strong>We as developers do not provide any ready-to-use AI models, default API keys, or centralized backend proxy services.</strong> All AI-powered features (such as itinerary generation, chat assistants, and recommendations) require the user to perform a manual setup of their chosen AI provider. You must supply your own API keys, credentials, and configuration.</p>
+      </div>
+
+      <p>By using Travel AI, you agree to the practices described in this Privacy Policy. If you do not agree with this policy, please do not use the application.</p>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2 id="data-collection">2. Data Collection Inventory</h2>
+      <p>Travel AI is designed with a local-first architecture. Most data remains securely on your device. We categorize data handled by the app as follows:</p>
+
+      <h3>A. Data Stored Locally on Your Device (SQLite / Room Database)</h3>
+      <ul>
+        <li><strong>Trip Itineraries &amp; Details:</strong> Destination city, start date, end date, travel interests, and budget preferences.</li>
+        <li><strong>Saved Stops &amp; Activities:</strong> Manually added or AI-recommended stops, categories, addresses, day indices, times of day, sequencing positions, and activity origin metadata.</li>
+        <li><strong>Agent Chat Conversations:</strong> Chat sessions, user prompt history, AI responses, and saved recommendation snapshots.</li>
+        <li><strong>Retention &amp; User Control:</strong> All local trip, stop, and chat data is stored exclusively in on-device SQLite databases managed by Android Room. Users maintain full control to delete individual trips, close/delete chat sessions, or clear all app data at any time through device settings or app controls.</li>
+      </ul>
+
+      <h3>B. Data Stored Securely in Encrypted Preferences (BYOK Configuration)</h3>
+      <ul>
+        <li><strong>Bring Your Own Key (BYOK) &amp; Manual Provider Setup:</strong> Because we do not provide pre-installed AI models or backend servers, all AI capabilities depend on user-configured credentials.</li>
+        <li><strong>Preconfigured &amp; Custom Providers:</strong> The application comes preconfigured with default API URL endpoint templates for four primary providers: <strong>OpenAI, Groq, Ollama, and Google</strong>. In addition, users can configure <strong>any other provider compatible with the OpenAI API</strong> by supplying a custom endpoint URL and API key.</li>
+        <li><strong>Security:</strong> BYOK API keys and access tokens are never stored in plaintext. They are encrypted at rest using a strong symmetric cipher (<code>AES/GCM/NoPadding</code>) backed by the hardware-enforced <strong>Android Keystore System</strong>. Encrypted credentials are excluded from Android Auto Backup and device-to-device transfers.</li>
+      </ul>
+
+      <h3>C. Data Transmitted to Third-Party Services</h3>
+      <ul>
+        <li><strong>Direct AI Provider Transmission (BYOK Model):</strong> Travel AI does not operate a centralized backend proxy server for AI requests. When you interact with the AI assistant, your prompts, trip destinations, dates, interests, and budget are transmitted <strong>directly from your device</strong> over encrypted HTTPS connections to the specific third-party AI provider you have manually selected and configured (such as OpenAI, Groq, Ollama, Google, or any other custom OpenAI-compatible provider). Each AI provider processes this data under its own respective terms of service and privacy practices.</li>
+        <li><strong>Geocoding &amp; Destination Search:</strong> When searching for destination cities or places, search queries are sent via HTTPS to the open Photon/Komoot geocoding service (<code>photon.komoot.io</code>) to retrieve location suggestions.</li>
+        <li><strong>Maps &amp; Navigation Handoff:</strong> When tapping navigation buttons on saved stops, the app launches an Android implicit intent (<code>geo:</code> or <code>https:</code>) to open Google Maps or a web browser on your device. Location queries and navigation requests are handled entirely by the mapping application on your device; no location tracking or telemetry is transmitted to us.</li>
+      </ul>
+
+      <h3>D. Diagnostics and Analytics</h3>
+      <p><strong>Diagnostics:</strong> Travel AI does not collect personal telemetry, device identifiers, or analytics tracking. No third-party crash reporting or analytics SDKs (such as Firebase Analytics or Crashlytics) are bundled in the release build. Standard Android system-level crash logs remain on your device unless manually exported by you (e.g., when sending an AI response error report via your device's email client).</p>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2 id="recipients">3. Recipients and Purposes of Data Sharing</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Recipient / Service</th>
+            <th>Data Transmitted</th>
+            <th>Purpose</th>
+            <th>Privacy &amp; Retention Governance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>User-Selected AI Provider</strong> (OpenAI, Groq, Ollama, Google, or any custom OpenAI-compatible provider configured manually)</td>
+            <td>Prompts, trip destinations, dates, interests, and budget.</td>
+            <td>Generating AI travel recommendations, summaries, and itineraries.</td>
+            <td>Governed by the chosen provider's independent privacy policy and data retention terms.</td>
+          </tr>
+          <tr>
+            <td><strong>Photon / Komoot Geocoding</strong> (<code>photon.komoot.io</code>)</td>
+            <td>Destination search query text.</td>
+            <td>Retrieving autocomplete location suggestions for trip creation and search.</td>
+            <td>Ephemeral geocoding lookup; no persistent profiling or user tracking.</td>
+          </tr>
+          <tr>
+            <td><strong>Google Maps / Web Browser</strong> (Device Intent)</td>
+            <td>Stop name and address.</td>
+            <td>Providing driving directions and map views on your device.</td>
+            <td>Handled locally by device OS and mapping application.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2 id="children">4. Children and Minors Privacy</h2>
+      <p>The App is intended for adults planning trips and is not directed to children. We do not collect or store personal information or traveler demographics regarding children or minors.</p>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2 id="security">5. Data Security and Retention</h2>
+      <ul>
+        <li><strong>Encryption in Transit:</strong> All network requests (AI provider API calls and geocoding lookups) use strict HTTPS/TLS encryption.</li>
+        <li><strong>Encryption at Rest:</strong> Sensitive API credentials are encrypted using Android Keystore cryptographic keys.</li>
+        <li><strong>Data Retention:</strong> Data is retained locally on your device until you manually delete it or uninstall the application. Deleting a trip instantly and permanently removes all associated stops, chat sessions, messages, and recommendations from the local database.</li>
+      </ul>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2 id="controls">6. User Controls and Data Deletion</h2>
+      <p>You retain full control over your data:</p>
+      <ul>
+        <li><strong>Delete Trips:</strong> You can delete any trip from the Trips screen, which instantly deletes all associated itinerary stops, chat sessions, and recommendations via cascading database rules.</li>
+        <li><strong>Disconnect Providers:</strong> You can disconnect any AI provider or delete its stored API key from the AI Settings screen, which immediately erases the encrypted credentials from device storage.</li>
+        <li><strong>Clear All Data:</strong> You can clear all app data at any time via Android device system settings (<code>Settings &gt; Apps &gt; Travel AI &gt; Storage &gt; Clear Data</code>), which completely erases all local SQLite databases and encrypted preference stores.</li>
+      </ul>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2 id="changes">7. Changes to This Privacy Policy</h2>
+      <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+    </section>
+
+    <hr>
+
+    <footer>
+      <p class="muted">&copy; AMJ Travel AI Team</p>
+    </footer>
+  </div>
+</body>
+</html>
